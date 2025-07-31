@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>弓木奈於 推しサイト - YUMIKI WORLD</title>
+    <link rel="stylesheet" href="css/yumiki_common.css" />
+    <link rel="stylesheet" href="css/yumiki_profile.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="page-background">
+      <header id="site-header" class="top-header">
+        <div class="header-inner">
+          <a href="#" class="site-logo" onclick="showLoadingScreen('index.html'); return false;">YUMIKI WORLD</a>
+          <nav class="main-nav">
+            <a href="#" onclick="showLoadingScreen('../index.html'); return false;">ホーム</a>
+            <a href="#" onclick="showLoadingScreen('../profile/index.html'); return false;">プロフィール</a>
+            <a href="#" onclick="showLoadingScreen('../works/index.html'); return false;">作品</a>
+            <a href="#" onclick="showLoadingScreen('../history/index.html'); return false;">経歴</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">推し紹介</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showLoadingScreen('index.html'); return false;">弓木奈於 トップ</a>
+                    <a href="#" onclick="showLoadingScreen('profile.html'); return false;">弓木奈於 プロフィール</a>
+                    <a href="#" onclick="showLoadingScreen('charm.html'); return false;">弓木奈於 魅力</a>
+                    <a href="#" onclick="showLoadingScreen('.memory.html'); return false;">弓木奈於 思い出</a>
+                    <a href="#" onclick="showLoadingScreen('gallery.html'); return false;">弓木奈於 写真</a>
+                </div>
+            </div>
+          </nav>
+          <div class="header-actions">
+            <button id="theme-toggle-btn" class="theme-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <div class="menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main-content-area">
+        <section class="top-banner-section">
+            <div class="banner-row">
+              <div class="left-banner-box">
+                <div class="banner-overlay"></div>
+                <div class="banner-text">
+                  <h1>弓木奈於 推しサイト</h1>
+                  <h2>〜YUMIKI WORLD〜</h2>
+                  <nav class="main-nav2">
+                    <a href="#" onclick="showLoadingScreen('profile.html'); return false;">プロフィール</a>
+                    <a href="#" onclick="showLoadingScreen('charm.html'); return false;">魅力</a>
+                    <a href="#" onclick="showLoadingScreen('memory.html'); return false;">思い出</a>
+                    <a href="#" onclick="showLoadingScreen('gallery.html'); return false;">写真</a>
+                  </nav>
+                </div>
+              </div>
+              <div class="right-banner-box">
+                <img src="images/yumiki-main.png" alt="弓木奈於" class="nao-photo" />
+              </div>
+              <img src="images/nogizaka-logo-banner.png" alt="乃木坂ロゴ" class="nogizaka-logo-center" />
+            </div>
+        </section>
+
+
+    
+
+      <!-- メイン -->
+      <main class="main-layout profile-body">
+        <!-- 左カラム：プロフィールと活動年表 -->
+        <div class="left-column">
+          <!-- プロフィール -->
+          <section class="profile-box profile-centered fade-in-section">
+            <div class="profile-photo-wrapper">
+              <img
+                src="images/nao_main.jpg"
+                alt="弓木奈於 プロフィール写真"
+                class="profile-main-photo"
+              />
+            </div>
+            <h2 class="center-heading">プロフィール</h2>
+            <dl class="profile-info centered-info">
+              <dt>名前</dt>
+              <dd>弓木 奈於（ゆみき なお）</dd>
+              <dt>生年月日</dt>
+              <dd>1999年2月3日</dd>
+              <dt>出身地</dt>
+              <dd>京都府</dd>
+              <dt>所属</dt>
+              <dd>乃木坂46（4期生）</dd>
+              <dt>ニックネーム</dt>
+              <dd>ゆみっきー・なおちゃん・弓木ちゃん</dd>
+              <dt>血液型</dt>
+              <dd>A型</dd>
+              <dt>星座</dt>
+              <dd>みずがめ座</dd>
+              <dt>身長</dt>
+              <dd>165cm</dd>
+              <dt>サイリウムカラー</dt>
+              <dd>
+                <span style="color: red; font-weight: bold">赤</span> ×
+                <span style="color: yellowgreen; font-weight: bold">黄緑</span>
+              </dd>
+              <dt>趣味</dt>
+              <dd>シルバミアファミリー、ドラマ鑑賞、料理、お笑い etc...</dd>
+              <dt>特技</dt>
+              <dd>水泳、バスケ、英語の発音</dd>
+              <dt>家族構成</dt>
+              <dd>7人兄弟の次女（弟は俳優・弓木大和）</dd>
+              <dt>本人公式SNS</dt>
+              <dd>
+                <div class="sns-icons">
+                  <!-- Instagram -->
+                  <button class="sns-icon-button" data-bs-toggle="modal" data-bs-target="#instagramModal">
+                    <img src="images/instagram-icon.png" alt="Instagram" class="sns-icon" />
+                  </button>
+                
+                  <!-- X -->
+                  <button class="sns-icon-button" data-bs-toggle="modal" data-bs-target="#xModal">
+                    <img src="images/x-icon.png" alt="X（旧Twitter）" class="sns-icon" />
+                  </button>
+                
+                  <!-- Blog -->
+                  <button class="sns-icon-button" data-bs-toggle="modal" data-bs-target="#blogModal">
+                    <img src="images/nogizaka-icon-square.png" alt="乃木坂公式ブログ" class="sns-icon" />
+                  </button>
+                </div>
+                
+              </dd>
+            </dl>
+          </section>
+
+          <!-- 活動年表 -->
+          <section class="profile-box fade-in-section">
+            <h2>活動年表</h2>
+            <div class="image-row">
+              <img
+                src="images/nao_first_senbatsu.jpg"
+                alt="初選抜"
+                class="timeline-img"
+              />
+              <img
+                src="images/nao_miren_tv.jpg"
+                alt="ドラマ未恋"
+                class="timeline-img"
+              />
+            </div>
+            <table class="timeline-table">
+              <tr>
+                <th>年代</th>
+                <th>出来事・活動</th>
+              </tr>
+              <tr>
+                <td>2013年6月</td>
+                <td>芸名「弓木 菜生」で劇団ハーベスト入団</td>
+              </tr>
+              <tr>
+                <td>2017年7月</td>
+                <td>ミスiD2018 セミファイナリストに選出</td>
+              </tr>
+              <tr>
+                <td>2018年8月</td>
+                <td>劇団ハーベスト卒団／坂道合同オーディション合格</td>
+              </tr>
+              <tr>
+                <td>2019年9月</td>
+                <td>坂道研修生として活動開始</td>
+              </tr>
+              <tr>
+                <td>2020年2月</td>
+                <td>乃木坂46への配属が発表</td>
+              </tr>
+              <tr>
+                <td>2020年10月</td>
+                <td>『沈黙の金曜日』アシスタント就任</td>
+              </tr>
+              <tr>
+                <td>2022年7月</td>
+                <td>30th「好きというのはロックだぜ!」で初選抜</td>
+              </tr>
+              <tr>
+                <td>2023年4月</td>
+                <td>「水曜日のハウマッチ」ナレーター就任</td>
+              </tr>
+              <tr>
+                <td>2023年10月</td>
+                <td>「ラヴィット！」金曜シーズンレギュラー出演</td>
+              </tr>
+              <tr>
+                <td>2024年4月</td>
+                <td>35th「チャンスは平等」で初の福神入り</td>
+              </tr>
+              <tr>
+                <td>2024年6月</td>
+                <td>
+                  公式Instagram開設<a
+                    href="https://www.instagram.com/nao.yumiki_official?igsh=MWE5M2hzOHllYm54ZA== "
+                    class="instagram-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >@nao_yumiki_official</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>2024年7月</td>
+                <td>写真集「天使だったのか」発売／オリコン書籍部門1位</td>
+              </tr>
+              <tr>
+                <td>2024年7月</td>
+                <td>
+                  「首ンセス」結成（五百城・奥田・川﨑・筒井と共にリーダー就任）
+                </td>
+              </tr>
+              <tr>
+                <td>2024年9月</td>
+                <td>京都市 若者移住促進プロジェクトCMに出演</td>
+              </tr>
+              <tr>
+                <td>2025年1月</td>
+                <td>ドラマ「未恋」で初主演</td>
+              </tr>
+              <tr>
+                <td>2025年6月</td>
+                <td>39th「Same Numbers」に選抜入り（10作連続）</td>
+              </tr>
+            </table>
+          </section>
+        </div>
+
+        <!-- 右カラム：出演・楽曲・写真集など -->
+        <div class="right-column">
+          <!-- 出演番組 -->
+          <section class="info-card fade-in-section">
+            <h3>出演番組</h3>
+            <div class="image-row">
+              <img
+                src="images/nao_radio.jpg"
+                alt="沈黙の金曜日"
+                class="section-img"
+              />
+              <img
+                src="images/nao_loveit.jpg"
+                alt="ラヴィット"
+                class="section-img"
+              />
+            </div>
+            <ul>
+              <li>
+                <strong>乃木坂工事中：</strong
+                >グループの冠番組で天然トークが炸裂
+              </li>
+              <li>
+                <strong>沈黙の金曜日：</strong
+                >「アルコ&ピース」の酒井と共にMC、鋭いツッコミも話題
+              </li>
+              <li>
+                <strong>ラヴィット！：</strong
+                >TBS朝の人気バラエティ。明るさが光る
+              </li>
+              <li><strong>東京パソコンクラブ：</strong>意外なITスキルを発揮</li>
+              <li>
+                <strong>未恋（ドラマ）：</strong>繊細な表情と自然な演技で話題に
+              </li>
+            </ul>
+
+            <div class="link-box">
+              <a href="https://thetv.jp/person/2000016056/"
+                >▶ 出演番組の詳細へ</a
+              >
+            </div>
+          </section>
+
+          <!-- 楽曲 -->
+          <section class="info-card fade-in-section">
+            <h3>代表的な楽曲</h3>
+            <img
+              src="images/nao_live.jpg"
+              alt="ライブショット"
+              class="section-img-full"
+            />
+            <p>
+              参加楽曲数：<strong>40曲以上</strong>（表題・アンダー・ユニット曲含む）<br />表題曲からアンダー曲、ユニット曲まで幅広く参加。<br /><br />
+              特設ページでは<br />
+              <strong>歌詞・フォーメーション・パフォーマンス</strong
+              >への深掘りを紹介!
+            </p>
+            <div class="link-box">
+              <a
+                href="https://nogizaka46-3kisei.club/naochan-participating-summary"
+                >▶ 楽曲紹介ページへ</a
+              >
+            </div>
+          </section>
+
+          <!-- 写真集 -->
+          <section class="info-card fade-in-section">
+            <h3>写真集『天使だったのか』</h3>
+            <img
+              src="images/nao_photobook_cover.jpg"
+              alt="写真集カバー"
+              class="section-img-full"
+            />
+            <p>
+              <strong> 発売日：2024年7月23日（撮影：三瓶康友）</strong
+              ><br /><br />撮影地はタイのプーケットで、彼女の魅力や新たな一面を詰め込んだ一冊となっている
+            </p>
+            <div class="link-box">
+              <a href="https://www.nogizaka46.com/s/n46/news/detail/100342"
+                >▶ 写真集特設ページへ</a
+              >
+            </div>
+          </section>
+
+          <!-- 弓木家とう-くん -->
+          <section class="info-card fade-in-section">
+            <h3>弓木家と愛犬うーくん</h3>
+            <div class="image-row">
+              <img
+                src="images/nao_with_uri.jpg"
+                alt="弓木さんとうーくん"
+                class="section-img"
+              />
+              <img
+                src="images/dog_uri.jpeg"
+                alt="うーくん"
+                class="section-img"
+              />
+            </div>
+            <p>
+              弓木家は7人兄弟！ラジオやバラエティーで度々話題になる大家族<br />
+              愛犬の雲海(うんかい)くんは人見知りでビックリ屋さんですが、活発です🐶両極端の性格としてファンにも知れ渡っている
+            </p>
+            <div class="link-box">
+              <a href="https://www.nogizaka46.com/s/n46/news/detail/66741"
+                >▶ 弓木家紹介ページへ</a
+              >
+            </div>
+          </section>
+
+          <!-- メンバー関係図 -->
+          <section class="info-card fade-in-section">
+            <h3>メンバーとの関係図</h3>
+            <img
+              src="images/nao_tamura_kaki.jpg"
+              alt="田村・賀喜との関係"
+              class="section-img-full"
+            />
+            <p>
+              乃木坂のメンバーでは同期の田村真佑と賀喜遥香と特に仲がよく、プライベートな関係性などが話題に<br /><br />
+              特設ページでは<br /><strong>メンバー</strong
+              >や<strong>あらゆる芸能人</strong>との関係性を紹介！
+            </p>
+            <div class="link-box">
+              <a href="https://nao-welina.com/447/">▶ 関係図ページへ</a>
+            </div>
+          </section>
+        </div>
+      </main>
+
+  
+    </div>
+  
+  </div>
+
+      <footer class="footer fade-in-section">
+        <div class="footer-container">
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>サイトマップ</h4>
+              <ul>
+                <li><a href="#" onclick="showLoadingScreen('profile.html'); return false;">プロフィール</a></li>
+                <li><a href="#" onclick="showLoadingScreen('charm.html'); return false;">魅力</a></li>
+                <li><a href="#" onclick="showLoadingScreen('./memory.html'); return false;">思い出</a></li>
+                <li><a href="#" onclick="showLoadingScreen('./gallery.html'); return false;">写真</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>ポートフォリオ</h4>
+              <ul>
+                <li><a href="#" onclick="showLoadingScreen('../index.html'); return false;">ホーム</a></li>
+                <li><a href="#" onclick="showLoadingScreen('../profile/index.html'); return false;">プロフィール</a></li>
+                <li><a href="#" onclick="showLoadingScreen('../works/index.html'); return false;">作品</a></li>
+                <li><a href="#" onclick="showLoadingScreen('../history/index.html'); return false;">経歴</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-sns">
+            <a href="https://www.instagram.com/nao.yumiki_official/" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/instagram-icon.png" alt="Instagram" /></a>
+            <a href="https://x.com/yumiki_1st?s=2" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/x-icon.png" alt="X" /></a>
+            <a href="https://www.nogizaka46.com/s/n46/diary/MEMBER/list?ct=55387" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/nogizaka-icon-square.png" alt="乃木坂公式ブログ" /></a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p>
+            © 2025 <strong> YUMIKI WORLD</strong> ／ 非公式サイト<br />
+            本ページは非公式ファン制作です。使用している画像・動画リンクは全て引用元を明示し、著作権を尊重しています。
+          </p>
+        </div>
+      </footer>
+      <button id="scroll-to-top-btn" title="トップへ戻る">▲</button>
+    </div>
+
+    <div id="offcanvasMenu" class="offcanvas-menu">
+      <a href="javascript:void(0)" class="closebtn" id="close-offcanvas">&times;</a>
+      <div class="offcanvas-content">
+          <img src="images/nogizaka-logo-banner.png" alt="乃木坂ロゴ" class="offcanvas-logo">
+          <h2>サイトメニュー</h2>
+          <nav class="offcanvas-nav">
+              <a href="#" onclick="showLoadingScreen('../index.html'); return false;">ホーム</a>
+              <a href="#" onclick="showLoadingScreen('../profile/index.html'); return false;">プロフィール</a>
+              <a href="#" onclick="showLoadingScreen('../works/index.html'); return false;">作品</a>
+              <a href="#" onclick="showLoadingScreen('../history/index.html'); return false;">経歴</a>
+              
+              <h2>Yumiki Page Menu</h2>
+              
+              <a href="#" onclick="showLoadingScreen('profile.html'); return false;">弓木奈於 プロフィール</a>
+              <a href="#" onclick="showLoadingScreen('charm.html'); return false;">弓木奈於 魅力</a>
+              <a href="#" onclick="showLoadingScreen('memory.html'); return false;">弓木奈於 思い出</a>
+              <a href="#" onclick="showLoadingScreen('gallery.html'); return false;">弓木奈於 写真</a>
+          </nav>
+          <p class="offcanvas-catchphrase">
+            〜YUMIKI WORLDへようこそ〜
+          </p>
+          <div class="footer-sns">
+            <a href="https://www.instagram.com/nao.yumiki_official/" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/instagram-icon.png" alt="Instagram" /></a>
+            <a href="https://x.com/yumiki_1st?s=2" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/x-icon.png" alt="X" /></a>
+            <a href="https://www.nogizaka46.com/s/n46/diary/MEMBER/list?ct=55387" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/nogizaka-icon-square.png" alt="乃木坂公式ブログ" /></a>
+          </div>
+      </div>
+  </div>
+    <script src="yumiki_main.js"></script>
+    <script src="../js/common.js"></script> 
+          <div id="menuBackdrop" class="menu-backdrop"></div>
+  </body>
+</html>

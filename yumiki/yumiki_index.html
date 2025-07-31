@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>弓木奈於 推しサイト - YUMIKI WORLD</title>
+    <link rel="stylesheet" href="css/yumiki_common.css" />
+    <link rel="stylesheet" href="css/yumiki_index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="page-background">
+      <header id="site-header" class="top-header">
+        <div class="header-inner">
+          <a href="#" class="site-logo" onclick="showLoadingScreen('index.html'); return false;">YUMIKI WORLD</a>
+          <nav class="main-nav">
+            <a href="#" onclick="showLoadingScreen('../index.html'); return false;">ホーム</a>
+            <a href="#" onclick="showLoadingScreen('../profile/index.html'); return false;">プロフィール</a>
+            <a href="#" onclick="showLoadingScreen('../works/index.html'); return false;">作品</a>
+            <a href="#" onclick="showLoadingScreen('../history/index.html'); return false;">経歴</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">推し紹介</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="showLoadingScreen('index.html'); return false;">弓木奈於 トップ</a>
+                    <a href="#" onclick="showLoadingScreen('profile.html'); return false;">弓木奈於 プロフィール</a>
+                    <a href="#" onclick="showLoadingScreen('charm.html'); return false;">弓木奈於 魅力</a>
+                    <a href="#" onclick="showLoadingScreen('.memory.html'); return false;">弓木奈於 思い出</a>
+                    <a href="#" onclick="showLoadingScreen('gallery.html'); return false;">弓木奈於 写真</a>
+                </div>
+            </div>
+          </nav>
+          <div class="header-actions">
+            <button id="theme-toggle-btn" class="theme-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <div class="menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="main-content-area">
+        <section class="top-banner-section">
+            <div class="banner-row">
+              <div class="left-banner-box">
+                <div class="banner-overlay"></div>
+                <div class="banner-text">
+                  <h1>弓木奈於 推しサイト</h1>
+                  <h2>〜YUMIKI WORLD〜</h2>
+                  <nav class="main-nav2">
+                    <a href="#" onclick="showLoadingScreen('rofile.html'); return false;">プロフィール</a>
+                    <a href="#" onclick="showLoadingScreen('charm.html'); return false;">魅力</a>
+                    <a href="#" onclick="showLoadingScreen('memory.html'); return false;">思い出</a>
+                    <a href="#" onclick="showLoadingScreen('gallery.html'); return false;">写真</a>
+                  </nav>
+                </div>
+              </div>
+              <div class="right-banner-box">
+                <img src="images/yumiki-main.png" alt="弓木奈於" class="nao-photo" />
+              </div>
+              <img src="images/nogizaka-logo-banner.png" alt="乃木坂ロゴ" class="nogizaka-logo-center" />
+            </div>
+        </section>
+        <section class="hero-yumiki-overview">
+            <div class="hero-yumiki-content-card">
+                <div class="hero-yumiki-profile-image">
+                    <img src="images/nao_main.jpg" alt="弓木奈於 プロフィール画像" />
+                </div>
+                <div class="hero-yumiki-text">
+                    <p class="hero-yumiki-label">PROFILE OVERVIEW</p>
+                    <h1 class="hero-yumiki-title">弓木 奈於 - YUMIKI NAO</h1>
+                    <p class="hero-yumiki-description">乃木坂46 4期生。1999年2月3日京都府出身。身長165cm。天真爛漫なキャラクターと、バラエティ番組で見せる予測不能なトークで人気を集めています。その一方で、影での努力を惜しまない真摯な姿勢もファンから高く評価されています。</p>
+                    <div class="sns-icons">
+                      <a href="https://www.instagram.com/nao.yumiki_official/" target="_blank" rel="noopener noreferrer" class="sns-icon-button">
+                          <img src="images/instagram-icon.png" alt="Instagram" class="sns-icon" />
+                      </a>
+                      <a href="https://x.com/yumiki_1st?s=2" target="_blank" rel="noopener noreferrer" class="sns-icon-button">
+                          <img src="images/x-icon.png" alt="X（旧Twitter）" class="sns-icon" />
+                      </a>
+                      <a href="https://www.nogizaka46.com/s/n46/diary/MEMBER/list?ct=55387" target="_blank" rel="noopener noreferrer" class="sns-icon-button">
+                          <img src="images/nogizaka-icon-square.png" alt="乃木坂公式ブログ" class="sns-icon" />
+                      </a>
+                    </div>
+            </div>
+        </section>
+
+    
+
+        <section class="info-cards-section fade-in-section">
+            <div class="info-card">
+              <h3>
+                <a href="#" class="card-link" onclick="showLoadingScreen('profile.html'); return false;"> 📖 プロフィール</a>
+              </h3>
+              <p>生年月日／出身／選抜歴／出演番組</p>
+            </div>
+
+            <div class="info-card">
+              <h3><a href="#" class="card-link" onclick="showLoadingScreen('charm.html'); return false;"> ✨ 魅力</a></h3>
+              <p>弓木ワールド・会話力・努力家</p>
+            </div>
+
+            <div class="info-card">
+              <h3><a href="#" class="card-link" onclick="showLoadingScreen('memory.html'); return false;"> 💬 思い出</a></h3>
+              <p>ミーグリ／ライブ／その他の思い出</p>
+            </div>
+
+            <div class="info-card">
+              <h3><a href="#" class="card-link" onclick="showLoadingScreen('gallery.html'); return false;"> 📷 写真</a></h3>
+              <p>写真集・生写真・お気に入り紹介</p>
+            </div>
+        </section>
+      </main>
+
+      <footer class="footer fade-in-section">
+        <div class="footer-container">
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>サイトマップ</h4>
+              <ul>
+                <li><a href="#" onclick="showLoadingScreen('profile.html'); return false;">プロフィール</a></li>
+                <li><a href="#" onclick="showLoadingScreen('charm.html'); return false;">魅力</a></li>
+                <li><a href="#" onclick="showLoadingScreen('./memory.html'); return false;">思い出</a></li>
+                <li><a href="#" onclick="showLoadingScreen('./gallery.html'); return false;">写真</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>ポートフォリオ</h4>
+              <ul>
+                <li><a href="#" onclick="showLoadingScreen('../index.html'); return false;">ホーム</a></li>
+                <li><a href="#" onclick="showLoadingScreen('../profile/index.html'); return false;">プロフィール</a></li>
+                <li><a href="#" onclick="showLoadingScreen('../works/index.html'); return false;">作品</a></li>
+                <li><a href="#" onclick="showLoadingScreen('../history/index.html'); return false;">経歴</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-sns">
+            <a href="https://www.instagram.com/nao.yumiki_official/" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/instagram-icon.png" alt="Instagram" /></a>
+            <a href="https://x.com/yumiki_1st?s=2" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/x-icon.png" alt="X" /></a>
+            <a href="https://www.nogizaka46.com/s/n46/diary/MEMBER/list?ct=55387" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/nogizaka-icon-square.png" alt="乃木坂公式ブログ" /></a>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p>
+            © 2025 <strong> YUMIKI WORLD</strong> ／ 非公式サイト<br />
+            本ページは非公式ファン制作です。使用している画像・動画リンクは全て引用元を明示し、著作権を尊重しています。
+          </p>
+        </div>
+      </footer>
+      <button id="scroll-to-top-btn" title="トップへ戻る">▲</button>
+    </div>
+
+    <div id="offcanvasMenu" class="offcanvas-menu">
+      <a href="javascript:void(0)" class="closebtn" id="close-offcanvas">&times;</a>
+      <div class="offcanvas-content">
+          <img src="images/nogizaka-logo-banner.png" alt="乃木坂ロゴ" class="offcanvas-logo">
+          <h2>サイトメニュー</h2>
+          <nav class="offcanvas-nav">
+              <a href="#" onclick="showLoadingScreen('../index.html'); return false;">ホーム</a>
+              <a href="#" onclick="showLoadingScreen('../profile/index.html'); return false;">プロフィール</a>
+              <a href="#" onclick="showLoadingScreen('../works/index.html'); return false;">作品</a>
+              <a href="#" onclick="showLoadingScreen('../history/index.html'); return false;">経歴</a>
+              
+              <h2>Yumiki Page Menu</h2>
+              
+              <a href="#" onclick="showLoadingScreen('profile.html'); return false;">弓木奈於 プロフィール</a>
+              <a href="#" onclick="showLoadingScreen('charm.html'); return false;">弓木奈於 魅力</a>
+              <a href="#" onclick="showLoadingScreen('memory.html'); return false;">弓木奈於 思い出</a>
+              <a href="#" onclick="showLoadingScreen('gallery.html'); return false;">弓木奈於 写真</a>
+          </nav>
+          <p class="offcanvas-catchphrase">
+            〜YUMIKI WORLDへようこそ〜
+          </p>
+          <div class="footer-sns">
+            <a href="https://www.instagram.com/nao.yumiki_official/" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/instagram-icon.png" alt="Instagram" /></a>
+            <a href="https://x.com/yumiki_1st?s=2" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/x-icon.png" alt="X" /></a>
+            <a href="https://www.nogizaka46.com/s/n46/diary/MEMBER/list?ct=55387" target="_blank" rel="noopener noreferrer" class="sns-icon-button"><img src="images/nogizaka-icon-square.png" alt="乃木坂公式ブログ" /></a>
+          </div>
+      </div>
+  </div>
+    <script src="yumiki_main.js"></script>
+    <script src="../js/common.js"></script> 
+          <div id="menuBackdrop" class="menu-backdrop"></div>
+  </body>
+</html>

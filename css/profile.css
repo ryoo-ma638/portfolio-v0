@@ -1,0 +1,257 @@
+/* ==========================================================
+ * プロフィールページ固有スタイル (profile/css/style.css)
+ * ========================================================== */
+
+/* ヒーローセクション (プロフィール画像とタイトル) */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 40vh; /* 最小高さを確保 */
+    background-color: var(--primary-color); /* メインカラーの背景 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    padding: 4rem 2rem;
+  }
+  
+  .hero-content {
+    z-index: 1;
+    position: relative;
+  }
+  
+  .profile-hero-image {
+    width: 180px; /* 画像サイズ調整 */
+    height: 180px;
+    border-radius: 50%; /* 丸形に */
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.8); /* 白いボーダー */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* 概要セクション */
+  .overview-section {
+    background-color: var(--background-color); /* グローバルな背景色 */
+    padding: 6rem 2rem;
+  }
+  
+  .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    align-items: start; /* 上揃え */
+  }
+  
+  .overview-item h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block; /* 下線をコンテンツ幅に合わせる */
+  }
+  
+  .overview-item p, .overview-item ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+  }
+  
+  .overview-item ul {
+    list-style: none;
+    padding-left: 20px; /* アイコン分のインデント */
+  }
+  
+  .overview-item ul li {
+    position: relative;
+    margin-bottom: 0.5rem;
+  }
+  
+  .overview-item ul li::before {
+    content: "▶"; /* 矢印アイコン */
+    color: var(--primary-color);
+    position: absolute;
+    left: -20px;
+  }
+  
+  /* 詳細プロフィールセクション */
+  .detail-profile-section {
+    background-color: var(--secondary-bg-color); /* グローバルなサブ背景色 */
+    padding: 6rem 2rem;
+  }
+  
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+  
+  .detail-item {
+    background-color: var(--card-bg-color); /* カード背景色 */
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--card-shadow-color);
+  }
+  
+  .detail-item h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+  }
+  
+  .detail-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  .detail-item p strong {
+    color: var(--primary-color);
+  }
+  
+  /* スキル・ツールセクション */
+  .skills-tools-section {
+    background-color: var(--background-color);
+    padding: 6rem 2rem;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .skill-category {
+    background-color: var(--card-bg-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--card-shadow-color);
+  }
+  
+  .skill-category h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+  
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .skill-category ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+  
+  /* お問い合わせCTAセクション */
+  .contact-cta-section {
+    background-color: var(--secondary-bg-color);
+    padding: 6rem 2rem;
+  }
+  
+  .contact-cta-section p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    color: var(--text-color);
+  }
+  
+  .cta-button { /* common.cssで定義済みのスタイルをオーバーライド */
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    border-radius: 50px; /* より丸いボタン */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #e60000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  /* レスポンシブ対応 */
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: 30vh;
+      padding: 3rem 1rem;
+    }
+    .profile-hero-image {
+      width: 150px;
+      height: 150px;
+    }
+    .hero-title {
+      font-size: 2rem;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+    .overview-section,
+    .detail-profile-section,
+    .skills-tools-section,
+    .contact-cta-section {
+      padding: 4rem 1rem;
+    }
+    .overview-grid,
+    .detail-grid,
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+    .overview-item h3,
+    .detail-item h3,
+    .skill-category h3 {
+      font-size: 1.5rem;
+    }
+    .overview-item p, .overview-item ul,
+    .detail-item p,
+    .skill-category ul li {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-section {
+      min-height: 25vh;
+    }
+    .profile-hero-image {
+      width: 120px;
+      height: 120px;
+    }
+    .hero-title {
+      font-size: 1.8rem;
+    }
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+    .cta-button {
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+    }
+  }

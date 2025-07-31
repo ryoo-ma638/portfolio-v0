@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+
+/* === memoryセクション全体 === */
+.memory {
+  padding: 3rem 1.5rem;
+  background: #fdfaff;
+  font-family: "Helvetica Neue", sans-serif;
+  color: #333;
+}
+
+/* === タイトル（セクションタイトル） === */
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  color: #6d4c9f;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #c3a6ff;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* === memory.html 専用スタイル === */
+.memory-background {
+  background-image: url("images/memory_back.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.memory-page-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.memory-section {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.memory .section-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #5c2a91;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #d7c4ff;
+}
+
+/* ===== 2カラムと1カラムの共通設定 ===== */
+.memory-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.memory-grid.two-column {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.memory-grid.one-column {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.memory-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.memory-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.memory-text h3 {
+  font-size: 1.4rem;
+  color: #5c2a91;
+}
+.memory-text h4 {
+  color: #777;
+  font-weight: normal;
+  margin-bottom: 1.5rem;
+}
+
+/* 2カラムの画像ギャラリー */
+.memory-image-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.memory-image-gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 500px;
+  border-radius: 10px;
+  background: #f4f4f4;
+}
+
+/* 1カラムの画像 */
+.memory-image-single img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  margin: 1rem auto;
+  display: block;
+}
+
+
+@media (max-width: 840px) {
+    .nao-photo {
+      display: none;
+    }
+  
+    .right-banner-box {
+      display: none;
+    }
+  
+    .nogizaka-logo-center {
+      display: none;
+    }
+  }
+  /* === スマホ表示の調整（全体） === */
+  @media (max-width: 768px) {
+   
+    .banner-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .left-banner-box{
+      width: 100%;
+      border-radius: 25px;
+      min-height: auto;
+      padding: 1.5rem 1rem;
+    }
+  
+  
+  
+    .main-layout {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+  
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+  
+    .hero-image {
+      width: 80%;
+      max-width: 280px;
+    }
+  
+    .info-card {
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+  
+    .info-card h3 {
+      font-size: 1rem;
+    }
+  
+    .footer-box {
+      padding: 1rem;
+    }
+  
+    .footer-box p {
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+    /* overlayメニューのモバイル対応 */
+    .overlay-content .overlay-nav a {
+      font-size: 2rem; 
+    }
+  
+    .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 25px;
+    }
+    /* 既存のモバイル対応スタイル統合 */
+    .memory-page-wrapper {
+      padding: 1rem 0.5rem;
+    }
+    .memory-section {
+      padding: 1.5rem;
+    }
+    .memory-item {
+      padding: 1.2rem;
+    }
+    .gallery-section {
+      padding: 1.5rem;
+    }
+    .gallery-title {
+      font-size: 1.6rem;
+    }
+    .namashashin-examples,
+    .photobook-grid,
+    .favorites-grid {
+      gap: 0.8rem;
+    }
+  }
+  
+  /* === スマホ表示の調整（ギャラリーセクション） === */
+  @media (max-width: 600px) {
+    .gallery-section {
+      padding: 1.5rem;
+    }
+    .gallery-title {
+      font-size: 1.6rem;
+    }
+    .namashashin-examples,
+    .photobook-grid,
+    .favorites-grid {
+      gap: 0.8rem;
+    }
+  }
+  
+  
+  
+  .fade-in-section {
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  
+  .fade-in-section.is-visible {
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+  
+  /* 右上のオフキャンバスメニューボタンのホバー効果 */
+  .menu-icon-button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .menu-icon-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+  }
+  
+  .sns-icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .sns-icon-button:hover {
+    transform: scale(1.1);
+  }
+  

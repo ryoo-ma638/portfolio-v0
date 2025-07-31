@@ -1,0 +1,1118 @@
+/* yumiki_common.css */
+@charset "UTF-8";
+
+/* ===== 基本設定 ===== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Hiragino Sans", "Meiryo", sans-serif;
+  background-color: #fff;
+  line-height: 1.6;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== 全体背景：赤×緑グラデ（推しカラー） ===== */
+.page-background {
+  background: linear-gradient(160deg, #e44c65 0%, #e2b6ff 50%, #a8e84d 100%);
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ===== 新しいヘッダー構成 ===== */
+#site-header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem 2rem;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-logo:hover {
+  color: #ffd1e3;
+}
+
+.main-nav ,element.style{
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a ,element.style a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.main-nav a::after,element.style a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffd1e3;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.main-nav a:hover,element.style a:hover {
+  color: #ffd1e3;
+}
+
+.main-nav a:hover::after,element.style a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ===== ドロップダウンメニュー ===== */
+
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1rem;
+    /* padding: 0.5rem 0; */
+    font-family: inherit;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(20, 20, 20, 0.9);
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    z-index: 1;
+    border-radius: 5px;
+    list-style: none;
+    /* padding: 0.5rem 0; */
+    /* margin-top: 0.5rem; */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.dropdown-content a {
+    color: #f1f1f1;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.dropdown-content a:hover {
+    background-color: #a54070;
+    color: #fff;
+}
+
+.dropdown-content a::after {
+    display: none; /* ドロップダウン内のリンクの下線は不要 */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover a.dropbtn {
+    color: #ffd1e3;
+}
+/* ===== ヘッダーここまで ===== */
+
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffd1e3;
+}
+
+/* ===== 右上オフキャンバスメニュー (修正版) ===== */
+
+/* ハンバーガーメニューアイコン */
+.menu-toggle {
+  display: flex; /* 画面サイズに関わらず常に表示 */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 110;
+  padding: 5px;
+}
+
+.menu-toggle:hover span {
+  background-color: #ffd1e3;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* アイコンのアニメーション（X字に変化） */
+.menu-toggle.is-active span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+.menu-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.is-active span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* オフキャンバスメニュー本体 */
+/* ===== 右上オフキャンバスメニュー (常時表示) ===== */
+
+/* ハンバーガーメニューアイコン */
+.menu-toggle {
+  display: flex; /* 常時表示するために flex に設定 */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 110;
+  padding: 5px;
+}
+
+
+/* ★★★ このコードで既存のメニューCSSを置き換えてください ★★★ */
+/* ハンバーガーメニューアイコン */
+.menu-toggle {
+
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 110;
+  padding: 5px;
+}
+
+.menu-toggle:hover span {
+  background-color: #ffd1e3;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* アイコンのアニメーション（X字に変化） */
+.menu-toggle.is-active span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+.menu-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.is-active span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* オフキャンバスメニュー本体 (トップページとデザインを統一) */
+.offcanvas-menu {
+  position: fixed;
+  top: 0;
+  right: 0; /* ★修正点: 右側に配置 */
+  width: 0; /* ★修正点: 初期状態では幅0で非表示 */
+  height: 100%;
+  background-color: #222;
+  overflow-x: hidden;
+  transition: width 0.4s ease-in-out; /* ★修正点: widthをアニメーションさせる */
+  z-index: 100;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  padding-top: 60px;
+}
+
+.offcanvas-menu.is-open {
+  width: 300px; /* ★修正点: 開いたときの幅 */
+}
+
+.offcanvas-content {
+  text-align: center;
+  padding: 20px;
+  color: #f1f1f1;
+}
+
+.offcanvas-logo {
+  width: 120px;
+  margin-bottom: 25px;
+}
+
+.offcanvas-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+}
+
+.offcanvas-nav a {
+  display: block;
+  padding: 12px 0;
+  color: #fff;
+  font-size: 1.1rem; /* ★修正点: 文字サイズをトップページと統一 */
+  transition: color 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.offcanvas-nav a:hover {
+  color: #a54070;
+}
+.offcanvas-nav a:last-child {
+  border-bottom: none;
+}
+
+.offcanvas-catchphrase {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 30px;
+}
+
+.offcanvas-menu .closebtn {
+  position: absolute;
+  top: 20px;
+  left: 20px; /* ★修正点: トップページに合わせて左上に配置 */
+  right: auto;
+  font-size: 2.5rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.offcanvas-menu .closebtn:hover {
+  color: #a54070;
+  transform: rotate(90deg);
+}
+
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.menu-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/* メニュー表示時の背景オーバーレイ */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.menu-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* メニュー内のコンテンツのスタイル調整 */
+.offcanvas-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+.offcanvas-nav h2 { /* メニュー内の小見出し */
+    font-size: 1.1rem;
+    color: #ccc;
+    margin: 20px 0 10px 0;
+    text-transform: none;
+    letter-spacing: normal;
+}
+.offcanvas-nav a {
+    font-size: 1.2rem; /* 少し小さくして見やすく */
+}
+
+
+
+/* Common Modal Styles (for SNS popups) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 200; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex; /* Show when 'show' class is added */
+}
+
+.modal-dialog {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-content {
+  background: none; /* Remove default bootstrap background */
+  border: none; /* Remove default bootstrap border */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0;
+}
+
+.close-button {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.modal-body {
+  padding: 0;
+  text-align: center;
+}
+
+.instagram-media {
+  max-width: 100%;
+  margin: 0 auto 20px auto;
+}
+
+.instagram-link-button, .x-link-button, .blog-link-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.instagram-link-button {
+  background-image: linear-gradient(to right, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+  color: white;
+}
+
+.instagram-link-button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.x-link-button {
+  background-color: #000;
+  color: white;
+}
+
+.x-link-button:hover {
+  background-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.blog-link-button {
+  background-color: #a54070;
+  color: white;
+}
+
+.blog-link-button:hover {
+  background-color: #8c2a5d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ===== フッター ===== */
+.footer {
+  background-color: #333;
+  color: #f8f8f8;
+  padding: 3rem 0;
+  font-family: "Noto Sans JP", sans-serif;
+  text-align: center; /* Adjust for brand centeredness */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  justify-content: center; /* Center links for smaller screens */
+  flex-grow: 1; /* Allow to take available space */
+}
+
+.footer-column {
+  flex: 1 1 150px; /* Adjust for responsiveness */
+  min-width: 120px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.footer-column h4 {
+  font-size: 1.1rem;
+  color: #e0d1f7;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-column ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ffd1e3;
+}
+
+.footer-brand {
+  text-align: right; /* Align to right on larger screens */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align items to the end */
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.footer-logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.footer-logo:hover {
+  color: #ffd1e3;
+}
+
+.footer-sns {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-sns .sns-icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.footer-sns .sns-icon-button img {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.footer-sns .sns-icon-button:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+.footer-copyright p {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 0;
+}
+
+#scroll-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  background-color: #a54070;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#scroll-to-top-btn:hover {
+  background-color: #8c2a5d;
+  transform: translateY(-3px);
+}
+
+/* Fade In Section */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments for common elements */
+@media (max-width: 768px) {
+  #site-header {
+    padding: 0.8rem 1rem;
+  }
+
+  .main-nav {
+    display: none; /* Hide main nav on small screens */
+  }
+
+  .site-logo {
+    font-size: 1.5rem;
+  }
+
+
+
+
+  .header-actions {
+    gap: 0.5rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+  }
+
+  .footer-column {
+    text-align: center;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .footer-brand {
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-logo {
+    font-size: 1.8rem;
+  }
+
+  .footer-sns {
+    justify-content: center;
+  }
+
+  .footer-copyright {
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-copyright p {
+    font-size: 0.75rem;
+  }
+
+  .offcanvas-menu .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 25px;
+  }
+
+  .offcanvas-nav a {
+    font-size: 1.6rem;
+    padding: 12px;
+  }
+
+  .offcanvas-logo {
+    width: 100px;
+  }
+
+  .offcanvas-menu h2 {
+    font-size: 1.5rem;
+  }
+
+  .offcanvas-catchphrase {
+    font-size: 1rem;
+  }
+
+  .modal-dialog {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .close-button {
+    font-size: 24px;
+  }
+
+  .instagram-link-button, .x-link-button, .blog-link-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ===== ヘッダー2構成（横並び） ===== */
+.top-header {
+  margin-bottom: 2rem;
+}
+
+.banner-row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+  gap: 0;
+}
+
+/* ===== 左バナー ===== */
+.left-banner-box {
+  position: relative; /* 子要素のabsolute配置の基準 */
+  flex: 1;
+  background: url("../images/left-profile.jpg") no-repeat center / cover;
+  border-radius: 25px 0 0 25px;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+.banner-text {
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.banner-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner-text h2 {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+
+.banner-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: #c8008f;
+}
+
+
+
+/* ヘッダー内のナビゲーション（既存のボタン）のスタイル */
+.main-nav2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.main-nav2 a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #ffffffcc; /* 半透明白 */
+  color: #222;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav2 a:hover {
+  background-color: #ffd1e3;
+  transform: translateY(-2px);
+}
+
+
+
+/* ===== 右バナー（弓木写真） ===== */
+.nao-photo {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.right-banner-box {
+  justify-content: center;
+  min-height: 380px;
+  border-radius: 0 25px 25px 0;
+  background-color: #fff;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card-link:hover {
+  background-color: #f8f8f8;
+  transform: translateY(-2px);
+}
+
+/* ===== ロゴ画像===== */
+.nogizaka-logo-center {
+  position: absolute;
+  top: 50%;
+  right: 270px;
+  transform: translateY(-50%);
+  width: 150px;
+  z-index: 3;
+}
+
+
+@media (max-width: 840px) {
+  .nao-photo {
+    display: none;
+  }
+
+  .right-banner-box {
+    display: none;
+  }
+
+  .nogizaka-logo-center {
+    display: none;
+  }
+}
+
+
+/* yumiki_common.css （完全・統合版） */
+
+
+/* ===== 基本設定 ===== */
+:root {
+    --primary-color: #a54070; /* 弓木ページのメインカラー */
+    --header-text-color: #fff;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Meiryo", sans-serif;
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: "Poppins", "Noto Sans JP", sans-serif; font-weight: 700; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+.page-background { background: linear-gradient(160deg, #e44c65 0%, #e2b6ff 50%, #a8e84d 100%); min-height: 100vh; }
+
+/* ===== ヘッダー ===== */
+#site-header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem 2rem;
+  color: var(--header-text-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.site-logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.main-nav {
+  display: flex;
+  gap: 2rem;
+}
+.main-nav a {
+  color: var(--header-text-color);
+  font-weight: 700;
+  font-size: 1rem;
+  position: relative;
+}
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.main-nav a:hover::after, .dropdown:hover .dropbtn::after {
+  transform: scaleX(1);
+}
+.dropdown { position: relative; }
+.dropdown .dropbtn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: var(--header-text-color);
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: inherit;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(20, 20, 20, 0.9);
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 1;
+  border-radius: 5px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+.dropdown-content a {
+  color: #f1f1f1;
+  padding: 10px 20px;
+  display: block;
+  font-size: 0.95rem;
+}
+.dropdown-content a:hover { background-color: var(--primary-color); }
+.dropdown:hover .dropdown-content { display: block; }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--header-text-color);
+  cursor: pointer;
+}
+
+/* ===== オフキャンバスメニュー (トップページ共通スタイル) ===== */
+.menu-toggle {
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 110;
+}
+
+.offcanvas-menu { position: fixed; top: 0; right: 0; width: 0; height: 100%; background-color: #222; overflow-x: hidden; transition: width 0.4s ease-in-out; z-index: 101; box-shadow: -5px 0 15px rgba(0,0,0,0.3); padding-top: 60px; }
+.offcanvas-menu.is-open { width: 300px; }
+.offcanvas-content { text-align: center; padding: 20px; color: #f1f1f1; }
+.offcanvas-logo { width: 120px; margin-bottom: 25px; }
+.offcanvas-content h2 { font-size: 1.4rem; margin-bottom: 30px; }
+.offcanvas-nav a { display: block; padding: 12px 0; color: #fff; font-size: 1.1rem; transition: color 0.3s ease; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.offcanvas-nav a:hover { color: var(--primary-color); }
+.offcanvas-nav a:last-child { border-bottom: none; }
+.offcanvas-catchphrase { font-size: 0.9rem; color: #aaa; margin-top: 30px; }
+.offcanvas-menu .closebtn { position: absolute; top: 20px; left: 20px; font-size: 2.5rem; color: #fff; transition: transform 0.3s ease; }
+.offcanvas-menu .closebtn:hover { transform: rotate(90deg); }
+.menu-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 99; opacity: 0; visibility: hidden; transition: opacity 0.4s ease-in-out; }
+.menu-backdrop.is-active { opacity: 1; visibility: visible; }
+
+/* ===== トップバナー用のスタイル ===== */
+.top-banner-section { margin-bottom: 2rem; }
+.banner-row { display: flex; justify-content: center; align-items: stretch; position: relative; }
+.left-banner-box { position: relative; flex: 1; background: url("../images/left-profile.jpg") no-repeat center / cover; border-radius: 25px 0 0 25px; min-height: 380px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.banner-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.35); z-index: 0; }
+.banner-text { z-index: 1; color: #fff; text-align: center; padding: 2rem; }
+.banner-text h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+.banner-text h2 { font-size: 1.9rem; margin-bottom: 1rem; }
+.main-nav2 { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
+.main-nav2 a { display: inline-block; padding: 0.6rem 1.2rem; background-color: #ffffffcc; color: #222; border-radius: 12px; font-weight: bold; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.main-nav2 a:hover { background-color: #ffd1e3; transform: translateY(-2px); }
+.right-banner-box { display: flex; align-items: center; justify-content: center; min-height: 380px; border-radius: 0 25px 25px 0; background-color: #fff; }
+.nao-photo { width: 100%; max-width: 320px; object-fit: cover; }
+.nogizaka-logo-center { position: absolute; top: 50%; right: 270px; transform: translateY(-50%); width: 150px; z-index: 3; }
+
+/* ===== フッター、モーダル、その他共通スタイル ===== */
+/* (共通スタイルは変更が少ないため、ここでは主要なもの以外は省略) */
+.footer { background-color: #333; color: #f8f8f8; padding: 3rem 0; text-align: center; }
+#scroll-to-top-btn { display: none; position: fixed; bottom: 20px; right: 20px; z-index: 99; background-color: var(--primary-color); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 1.5rem; cursor: pointer; }
+
+/* ===== レスポンシブ対応 ===== */
+@media (max-width: 768px) {
+  #site-header { padding: 0.8rem 1rem; }
+  .main-nav { display: none; }
+  .menu-toggle { display: flex; }
+  .banner-row { flex-direction: column; }
+  .left-banner-box, .right-banner-box { border-radius: 25px; }
+  .right-banner-box, .nogizaka-logo-center { display: none; }
+}

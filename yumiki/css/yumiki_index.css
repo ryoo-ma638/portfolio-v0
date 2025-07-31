@@ -1,0 +1,271 @@
+/* yumiki_index.css */
+@charset "UTF-8";
+
+/* ===== Main Content Area ===== */
+.main-content-area {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto; /* 上部のマージンを削除 */
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+/* ===== New Hero Yumiki Overview Section ===== */
+.hero-yumiki-overview {
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-yumiki-content-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    max-width: 900px;
+    width: 100%;
+}
+
+.hero-yumiki-profile-image {
+    flex-shrink: 0;
+}
+
+.hero-yumiki-profile-image img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.hero-yumiki-text {
+    text-align: left;
+}
+
+.hero-yumiki-label {
+    font-family: "Poppins", sans-serif;
+    color: #888;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-yumiki-title {
+    font-family: "Poppins", "Noto Sans JP", sans-serif;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.hero-yumiki-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 2rem;
+}
+
+.hero-yumiki-cta-button {
+    display: inline-block;
+    background-color: #a54070;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(165, 64, 112, 0.3);
+}
+
+.hero-yumiki-cta-button:hover {
+    background-color: #8c2a5d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(165, 64, 112, 0.4);
+}
+
+
+/* ===== Introduction Section ===== */
+.introduction-section {
+    background: url("images/bg-profile.jpg") no-repeat center / cover;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 2rem 0;
+}
+
+.introduction-content {
+    background-color: rgba(255, 255, 255, 0.92);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.hero-image {
+    display: block;
+    width: 80%;
+    max-width: 350px;
+    height: auto;
+    margin: 1.5rem auto 2.5rem auto;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.intro-text-box .quote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #a0406b;
+    margin-bottom: 0.8rem;
+}
+
+.intro-text-box .intro {
+    font-size: 1.0rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.sns-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.sns-icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.sns-icons img {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sns-icons img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Info Cards Section ===== */
+.info-cards-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-left: 5px solid #a54070;
+    border-radius: 12px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    margin: 0 0 0.5rem;
+    color: #5c2a91;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    margin: 0;
+    color: #444;
+}
+
+.card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 12px;
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: #a54070;
+}
+
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 840px) {
+    .hero-yumiki-content-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+
+    .hero-yumiki-text {
+        text-align: center;
+    }
+
+    .hero-yumiki-profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-yumiki-title {
+        font-size: 1.6rem;
+    }
+
+    .introduction-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        align-items: center;
+        padding: 1.5rem;
+    }
+
+    .hero-image {
+        margin: 0;
+        width: 80%;
+        max-width: none;
+    }
+
+    .intro-text-box {
+        flex: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content-area {
+        padding: 1rem;
+    }
+
+    .hero-yumiki-overview {
+        padding: 1rem;
+    }
+
+    .info-cards-section {
+        grid-template-columns: 1fr;
+    }
+}

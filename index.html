@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Osaki Ryoma's Portfolio</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-background">
+      <header id="site-header" class="top-header">
+        <div class="header-inner">
+          <a href="#" class="site-logo">Osaki Ryoma</a>
+          <nav class="main-nav">
+            <a href="#profile-section">プロフィール</a>
+            <a href="#works-section">作品</a>
+            <a href="#history-section">経歴</a>
+            <a href="#yumiki-section">推し紹介</a>
+          </nav>
+          <div class="header-actions">
+            <button id="theme-toggle-btn" class="theme-toggle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <div class="menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section id="hero-section" class="hero-section">
+          <div class="hero-content">
+            <h1 class="hero-title">未知を駆ける創造力</h1>
+            <p class="hero-subtitle">Webの可能性を切り拓き、新たな価値を創造する</p>
+            <div class="hero-buttons">
+              <a href="#works-section" class="hero-button primary">VIEW WORKS</a>
+              <a href="#profile-section" class="hero-button secondary">ABOUT ME</a>
+            </div>
+          </div>
+          <div class="hero-image-container">
+            <img src="images/hero-main.jpg" alt="メインビジュアル" class="hero-image" />
+          </div>
+          <div class="scroll-indicator">
+            <a href="#profile-section">
+              <svg width="30" height="45" viewBox="0 0 30 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 44L15 1" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 37L15 44L23 37" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <section id="profile-section" class="content-section profile-section fade-in-section">
+          <div class="section-container">
+            <h2 class="section-title">PROFILE</h2>
+            <div class="profile-grid">
+              <div class="profile-image">
+                <img src="images/profile-image.jpg" alt="プロフィール画像" />
+              </div>
+              <div class="profile-text">
+                <h3>大崎 稜馬 - Osaki Ryoma</h3>
+                <p class="profile-intro">
+                  メディア情報学を専攻する学生クリエイター。Webデザインとフロントエンド開発を中心に、ユーザー体験を重視した制作を行っています。美しいUIとスムーズなインタラクションを通じて、Webサイトに新たな価値を生み出すことを追求します。
+                </p>
+                <ul class="profile-details">
+                  <li><strong>スキル:</strong> HTML, CSS, JavaScript, React, Figma, Adobe XD</li>
+                  <li><strong>得意なこと:</strong> Webサイト設計、レスポンシブデザイン、アニメーション実装</li>
+                  <li><strong>興味:</strong> 野球、乃木坂、桜坂</li>
+                </ul>
+                <a href="profile/index.html" onclick="showLoadingScreen('profile/index.html'); return false;" class="cta-button">詳細を見る</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="works-section" class="content-section works-section fade-in-section">
+          <div class="section-container">
+            <h2 class="section-title">WORKS</h2>
+            <div class="works-grid">
+              <div class="work-card" data-project-id="project1">
+                <img src="images/work-thumb1.jpg" alt="作品1" />
+                <div class="work-info">
+                  <h3>Project Title 1</h3>
+                  <p>Web Design / Front-end Development</p>
+                </div>
+              </div>
+              <div class="work-card" data-project-id="project2">
+                <img src="images/work-thumb2.jpg" alt="作品2" />
+                <div class="work-info">
+                  <h3>Project Title 2</h3>
+                  <p>UI/UX Design / Application Development</p>
+                </div>
+              </div>
+              <div class="work-card" data-project-id="project3">
+                <img src="images/work-thumb3.jpg" alt="作品3" />
+                <div class="work-info">
+                  <h3>Project Title 3</h3>
+                  <p>Graphic Design / Branding</p>
+                </div>
+              </div>
+            </div>
+            <a href="works/index.html" onclick="showLoadingScreen('works/index.html'); return false;" class="cta-button">More Works</a>
+          </div>
+        </section>
+
+        <section id="history-section" class="content-section history-section fade-in-section">
+          <div class="section-container">
+            <h2 class="section-title">HISTORY</h2>
+            <div class="history-timeline">
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <h3>2024年 4月</h3>
+                  <p>愛知工業大学 コンピューターシステム専攻 入学</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <h3>2025年 4月</h3>
+                  <p>愛知工業大学 メディア情報専攻 転専攻
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-content">
+                  <h3>2024年〜</h3>
+                  <p>フロントエンド技術（HTML, CSS, JavaScript）を本格的に学習 / 複数の個人開発プロジェクトに参加</p>
+                </div>
+              </div>
+            </div>
+            <a href="memory/index.html" onclick="showLoadingScreen('memory/index.html'); return false;" class="cta-button">More History</a>
+          </div>
+        </section>
+
+        <section id="yumiki-section" class="content-section yumiki-section fade-in-section">
+          <div class="section-container">
+            <h2 class="section-title">推し紹介</h2>
+            <div class="yumiki-content">
+              <p>私の推しは、乃木坂46の弓木奈於さんです。彼女の魅力は、その天真爛漫な笑顔と、努力を惜しまない真摯な姿勢です。ステージ上でのパフォーマンスはもちろん、ブログやSNSでの発信からも、いつも元気をもらっています。</p>
+              <div class="yumiki-image">
+                <img src="images/yumiki-image.jpg" alt="弓木奈於さん" />
+              </div>
+              <p>彼女の活動を応援することが、私の日々の活力になっています。このポートフォリオサイトも、彼女のように誰かの心を動かすことができるような、魅力的なものにしていきたいと思っています。</p>
+              <a href="yumiki/yumiki_index.html" onclick="showLoadingScreen('yumiki/yumiki_index.html'); return false;" class="cta-button">詳細を見る</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer fade-in-section">
+        <div class="footer-container">
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4>サイトマップ</h4>
+              <ul>
+                <li><a href="#profile-section">プロフィール</a></li>
+                <li><a href="#works-section">作品</a></li>
+                <li><a href="#history-section">経歴</a></li>
+                <li><a href="#yumiki-section">推し紹介</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h4>関連情報</h4>
+              <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">プライバシーポリシー</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-brand">
+            <a href="#" class="footer-logo">Osaki Ryoma</a>
+            <div class="footer-sns">
+              <a href="#"><img src="yumiki/images/instagram-icon.png" alt="Instagram" /></a>
+              <a href="#"><img src="yumiki/images/x-icon.png" alt="X" /></a>
+              <a href="#"><img src="images/l.png" alt="LINE" /></a>
+              <a href="#"><img src="images/d.jpeg" alt="Discord" /></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p>
+            © 2025 Osaki Ryoma. ALL RIGHTS RESERVED.
+          </p>
+        </div>
+      </footer>
+      <button id="scroll-to-top-btn" title="トップへ戻る">▲</button>
+    </div>
+    <div id="offcanvasMenu" class="offcanvas-menu">
+        <a href="javascript:void(0)" class="closebtn">&times;</a>
+        <div class="offcanvas-content">
+            <img src="images/your-logo.png" alt="ロゴ" class="offcanvas-logo">
+            <h2>Osaki Ryoma's Portfolio Menu</h2>
+            <nav class="offcanvas-nav">
+                <a href="#" onclick="showLoadingScreen('index.html'); return false;">ホーム</a>
+                <a href="#" onclick="showLoadingScreen('profile/index.html'); return false;">プロフィール</a>
+                <a href="#" onclick="showLoadingScreen('works/index.html'); return false;">作品</a>
+                <a href="#" onclick="showLoadingScreen('memory/index.html'); return false;">経歴</a>
+                <a href="#" onclick="showLoadingScreen('yumiki/yumiki_index.html'); return false;">推し紹介</a>
+            </nav>
+            <div class="offcanvas-social-links">
+              <a href="#"><img src="yumiki/images/instagram-icon.png" alt="Facebook"></a>
+              <a href="#"><img src="yumiki/images/x-icon.png" alt="X"></a>
+              <a href="#"><img src="images/l.png" alt="LINE"></a>
+            </div>
+        </div>
+    </div>
+    <div id="menuBackdrop" class="menu-backdrop"></div>
+
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h3 id="modal-title"></h3>
+        <img id="modal-image" src="" alt="Project Image">
+        <p id="modal-description"></p>
+        <p><strong>制作期間:</strong> <span id="modal-duration"></span></p>
+        <p><strong>使用技術:</strong> <span id="modal-tech"></span></p>
+        <a id="modal-link" href="#" target="_blank" class="modal-link-button">詳しく見る</a>
+      </div>
+    </div>
+
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

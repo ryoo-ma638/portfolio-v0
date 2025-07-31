@@ -1,0 +1,510 @@
+/*
+ * スタイルシート：ウェブサイト共通スタイル
+ *
+ * このファイルは、ヘッダー、フッター、ナビゲーション、
+ * および基本的なレスポンシブデザインのスタイルを定義します。
+ */
+
+/* ==========================================================
+ * カラー変数と基本設定
+ * ========================================================== */
+
+ :root {
+    --background-color: #fefeff; /* 背景色（ライトモード） */
+    --text-color: #333; /* 主要テキスト色（ライトモード） */
+    --primary-color: #f72c2c; /* メインのアクセント色（赤） */
+    --secondary-bg-color: #f7f7f7; /* セクションの背景色（ライトモード） */
+    --card-bg-color: #fff; /* カードの背景色（ライトモード） */
+    --card-shadow-color: rgba(0, 0, 0, 0.1); /* カードの影（ライトモード） */
+    --footer-bg-color: #101c38; /* フッター背景色 */
+    --footer-text-color: #fff; /* フッターテキスト色 */
+    --header-bg-color-transparent: rgba(0, 0, 0, 0.8); /* ヘッダーの初期背景色 */
+    --header-bg-color-scrolled: rgba(16, 28, 56, 0.98); /* スクロール時のヘッダー背景色 */
+    --header-text-color: #fff; /* ヘッダーテキスト色 */
+    --link-color-footer: #ccc; /* フッターリンク色 */
+    --copyright-color: #888; /* コピーライト色 */
+    --modal-bg-color: #fff; /* モーダル背景色 */
+    --modal-text-color: #333; /* モーダルテキスト色 */
+    --modal-border-color: #eee; /* モーダルボーダー色 */
+  }
+  
+  body.dark-mode {
+    --background-color: #121212;
+    --text-color: #f1f1f1;
+    --primary-color: #f72c2c;
+    --secondary-bg-color: #1e1e1e;
+    --card-bg-color: #2b2b2b;
+    --card-shadow-color: rgba(255, 255, 255, 0.1);
+    --footer-bg-color: #000;
+    --footer-text-color: #fff;
+    --header-bg-color-transparent: rgba(0, 0, 0, 0.9);
+    --header-bg-color-scrolled: rgba(0, 0, 0, 0.98);
+    --header-text-color: #fff;
+    --link-color-footer: #aaa;
+    --copyright-color: #777;
+    --modal-bg-color: #2b2b2b;
+    --modal-text-color: #f1f1f1;
+    --modal-border-color: #444;
+  }
+  
+  
+  /* HTMLとボディの基本スタイル */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease; /* テーマ切り替え時のスムーズな変化 */
+  }
+  
+  /* 主要な見出しとタイトルのフォント設定 */
+  h1, h2, h3, h4,
+  .hero-title,
+  .offcanvas-content h2,
+  .offcanvas-nav a {
+    font-family: "Poppins", "Noto Sans JP", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  /* リンクの基本スタイル */
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+  
+  /* ==========================================================
+   * ヘッダー
+   * ========================================================== */
+  
+  /* トップヘッダーの固定スタイル */
+  .top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background-color 0.3s ease-in-out;
+    color: var(--header-text-color);
+    background-color: transparent; /* 初期は透明 */
+  }
+  
+  /* スクロール時のヘッダースタイル */
+  .top-header.scrolled {
+    background-color: var(--header-bg-color-scrolled);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* ヘッダー内部のコンテナ */
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+  }
+  
+  /* サイトロゴのスタイル */
+  .site-logo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: var(--header-text-color);
+    transition: color 0.3s ease-in-out;
+  }
+  
+  /* スクロール時にロゴの色を赤に */
+  .top-header.scrolled .site-logo {
+    color: var(--primary-color);
+  }
+  
+  /* メインナビゲーション */
+  .main-nav a {
+    margin-left: 2.5rem;
+    font-weight: 500;
+    color: var(--header-text-color);
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  /* ホバー時の下線アニメーション */
+  .main-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .main-nav a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  /* ヘッダー内のアクション（テーマ切り替えとメニューアイコン） */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  /* テーマ切り替えボタン */
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--header-text-color);
+    transition: color 0.3s ease;
+    padding: 0; /* 余分なパディングを削除 */
+  }
+  
+  .theme-toggle svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .theme-toggle:hover {
+    color: var(--primary-color);
+  }
+  
+  /* ==========================================================
+   * オフキャンバスメニュー (モバイル用)
+   * ========================================================== */
+  
+  /* ハンバーガーメニューアイコン */
+  .menu-toggle {
+    display: none; /* デスクトップでは非表示 */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px; /* アイコンの幅 */
+    height: 25px; /* アイコンの高さ */
+    cursor: pointer;
+    z-index: 110;
+    padding: 5px; /* クリックしやすいようにパディングを追加 */
+  }
+  
+  /* ホバー時の色変化 */
+  .menu-toggle:hover span {
+    background-color: var(--primary-color); /* ホバーでプライマリカラーに */
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--header-text-color); /* ヘッダーのテキスト色に合わせる */
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* ハンバーガーアイコンのアニメーション（X字に変化） */
+  .menu-toggle.is-active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+  }
+  
+  .menu-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.is-active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+  }
+  
+  /* オフキャンバスメニュー本体 */
+  .offcanvas-menu {
+    position: fixed;
+    top: 0;
+    right: 0; /* 右端からスライドイン */
+    width: 0; /* 初期状態では幅0 */
+    max-width: 300px; /* 最大幅 */
+    height: 100%;
+    background-color: #222; /* メニューの背景色 */
+    overflow-x: hidden;
+    transition: width 0.4s ease-in-out; /* 幅のアニメーション */
+    z-index: 100;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px; /* 上部にスペース */
+  }
+  
+  .offcanvas-menu.is-open {
+    width: 100%; /* 開いたときの幅（モバイル） */
+    max-width: 300px; /* 開いたときの最大幅 */
+  }
+  
+  .offcanvas-content {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #f1f1f1; /* コンテンツ全体のデフォルト色 */
+  }
+  
+  .offcanvas-logo {
+    width: 120px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+  }
+  
+  .offcanvas-content h2 {
+    font-size: 1.4rem;
+    color: #f1f1f1;
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .offcanvas-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .offcanvas-nav a {
+    display: block;
+    padding: 12px 0;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .offcanvas-nav a:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .offcanvas-nav a:last-child {
+    border-bottom: none;
+  }
+  
+  .offcanvas-catchphrase {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 30px;
+    font-style: italic;
+  }
+  
+  .offcanvas-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+  }
+  
+  .offcanvas-social-links img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  
+  .offcanvas-social-links img:hover {
+    opacity: 1;
+  }
+  
+  .offcanvas-menu .closebtn {
+    position: absolute;
+    top: 20px;
+    left: 20px; /* 左上に配置 */
+    font-size: 2.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .offcanvas-menu .closebtn:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+  }
+  
+  /* メニュー表示時の背景オーバーレイ */
+  .menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+  }
+  
+  .menu-backdrop.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* ==========================================================
+   * フッター
+   * ========================================================== */
+  
+  .footer {
+    background: var(--footer-bg-color);
+    color: var(--footer-text-color);
+    padding: 4rem 2rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* 修正: ダークモード対応 */
+  }
+  
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-links h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--footer-text-color);
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-links ul li a {
+    color: var(--link-color-footer);
+  }
+  
+  .footer-links ul li a:hover {
+    color: var(--primary-color);
+  }
+  
+  .footer-brand {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-logo {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    font-family: "Poppins", sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  
+  .footer-sns {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .footer-sns img {
+    width: 35px;
+    height: 35px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .footer-sns img:hover {
+    opacity: 1;
+  }
+  
+  .footer-copyright {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--copyright-color);
+  }
+  
+  /* ==========================================================
+   * トップへ戻るボタン
+   * ========================================================== */
+  
+  #scroll-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 99;
+  }
+  
+  #scroll-to-top-btn.show {
+    display: block;
+    transform: translateY(0);
+  }
+  
+  /* ==========================================================
+   * スクロールフェードイン共通スタイル
+   * ========================================================== */
+  
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* ==========================================================
+   * レスポンシブ対応
+   * ========================================================== */
+  
+  @media (max-width: 768px) {
+    .header-inner {
+      padding: 1rem;
+    }
+  
+    .main-nav {
+      display: none;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .top-header.scrolled {
+       background-color: var(--header-bg-color-scrolled);
+    }
+    
+    .footer-links {
+      grid-template-columns: 1fr;
+    }
+  }
